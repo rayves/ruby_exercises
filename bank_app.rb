@@ -5,6 +5,7 @@
 def banking_app
 	# Your code here.
 	acc_balance = 0.to_f
+	withdraw = 0
 	puts "Welcome to the banking app"
 	puts "Please enter your password."
 	gets.chomp
@@ -31,23 +32,45 @@ def banking_app
 					puts "What would you like to do? (options: balance, deposit, withdraw or exit)"
 					break
 				else
-					puts "Invalid selection!"
+					puts "Invalid number!"
 					puts "Would you like to make another deposit?"
 				end
 			end
 		when "withdraw"
-			puts "How much would you like to withdraw?"
-			acc_balance -= gets.chomp.to_f
-			puts "Your balance is now $#{acc_balance}"
-			puts "Would you like to make another withdrawal?"
+			puts "How much would you like to withdraw? or return"
+			while withdraw = gets.chomp.to_f
+				if withdraw <= acc_balance && withdraw >= 0
+					acc_balance -= withdraw
+					puts "Your balance is now $#{acc_balance}"
+					puts "Would you like to make another withdrawal?"
+					break
+				elsif withdraw > acc_balance && withdraw >= 0
+					puts "Insufficient funds."
+					puts "Please withdraw an amount equal to or less than your balance or Return"
+				else
+					puts "Invalid number!"
+					puts "How much would you like to withdraw? or return"
+				end
+			end
 			while deposit_loop = gets.chomp
 				system "clear"
 				case deposit_loop
 				when "yes"
 					puts "How much would you like to withdraw?"
-					acc_balance -= gets.chomp.to_f
-					puts "Your balance is now $#{acc_balance}"
-					puts "Would you like to make another withdrawal?"
+					while withdraw = gets.chomp.to_f
+						if withdraw <= acc_balance && withdraw >= 0
+							acc_balance -= withdraw
+							puts "Your balance is now $#{acc_balance}"
+							puts "Would you like to make another withdrawal?"
+							break
+						elsif withdraw > acc_balance && withdraw >= 0
+							puts "Insufficient funds."
+							puts "Please withdraw an amount equal to or less than your balance or Return"
+						else
+							puts "Invalid number!"
+							puts "How much would you like to withdraw? or return"
+						end
+					end
 				when "no"
 					puts "What would you like to do? (options: balance, deposit, withdraw or exit)"
 					break
