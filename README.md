@@ -1,0 +1,1 @@
+# Repository for various ruby exercises I work on
