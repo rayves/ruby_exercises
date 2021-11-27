@@ -35,6 +35,27 @@ def banking_app
 					puts "Would you like to make another deposit?"
 				end
 			end
+		when "withdraw"
+			puts "How much would you like to withdraw?"
+			acc_balance -= gets.chomp.to_f
+			puts "Your balance is now $#{acc_balance}"
+			puts "Would you like to make another withdrawal?"
+			while deposit_loop = gets.chomp
+				system "clear"
+				case deposit_loop
+				when "yes"
+					puts "How much would you like to withdraw?"
+					acc_balance -= gets.chomp.to_f
+					puts "Your balance is now $#{acc_balance}"
+					puts "Would you like to make another withdrawal?"
+				when "no"
+					puts "What would you like to do? (options: balance, deposit, withdraw or exit)"
+					break
+				else
+					puts "Invalid selection!"
+					puts "Would you like to make another withdraw?"
+				end
+			end
 		when "exit"
 			puts "Thank you for using bank app."
 			break
