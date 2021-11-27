@@ -1,9 +1,9 @@
-# Write a program to implement a simple bank account. 
-
+#EXISTING ISSUES
+#	Deposit parameters not set so only positive numbers accepted.
+#	Withdrawal input accepts letter characters when it should only accept numbers.
 
 
 def banking_app
-	# Your code here.
 	acc_balance = 0.to_f
 	withdraw = 0
 	puts "Welcome to the banking app"
@@ -32,7 +32,7 @@ def banking_app
 					puts "What would you like to do? (options: balance, deposit, withdraw or exit)"
 					break
 				else
-					puts "Invalid number!"
+					puts "Invalid selection!"
 					puts "Would you like to make another deposit?"
 				end
 			end
