@@ -35,11 +35,17 @@ def count_the_elements(elements)
     count = {}
     elements.each do |element|
         if count[element]
-            count[element] = count[element] + 1
+            count[element] += 1
         else
             count[element] = 1
         end
+        return count
     end
+    
+
+    pp count_the_elements(["leopard","wolf","bear","bear","leopard","bear"])
+
+
     new_array = []
 
     count.each do |animal, num|
