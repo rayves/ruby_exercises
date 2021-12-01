@@ -45,12 +45,14 @@ def full_family
 
 
     # Part 1: Your code here, start by changing immediate_family
-    immediate_family = []
-
+    immediate_family = family[:sisters] + family[:brothers]
+    
     # Part 2: Make changes to family here
-
+    family[:uncles].push("Jacob")
+    family[:aunts].delete("Jill")
     # Don't change the code below
     return [family, immediate_family]
 end
 
 
+pp full_family

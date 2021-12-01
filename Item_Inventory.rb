@@ -31,3 +31,29 @@ fruits = {"banana" => 2, "orange" => 2.5, "avocado" => 2.45}
 veggies = {:carrot => 1.75, :celery => 2.75, :kale => 4}
 
 # Your code here
+fruits.transform_keys!(&:to_sym) 
+
+fruits[:peach] = 5
+
+fruits[:avocado] = 3
+
+fruits.delete(:orange)
+
+inventory = fruits.merge(veggies)
+
+inventory.each do |item, price|
+    puts "Item: #{item} Cost: $#{price}"
+end
+
+
+
+
+
+# # where merging arrays and want to add amounts togeother
+# fruits = {:carrot => 2}
+
+# veggies = {:carrot => 1.75}
+
+# inventory = fruits.merge(veggies){|key, oldval, newval| oldval + newval}
+
+# pp inventory
