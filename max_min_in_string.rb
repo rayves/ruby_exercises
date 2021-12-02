@@ -15,7 +15,7 @@ E.g. max_min_in_string("-23 4 4 -23 8 0 -2") should return "8 -23"
 
 def max_min_in_string (str)
     # Your code here
-    str.split.minmax.reverse.join(' ')
+    str.split.minmax_by(&:to_i).reverse.join(' ')
         # .split -> splits string by character into array
         # .minmax -> returns minimum and maximum values from array in an array of strings
         # _by(&:to_i) -> and converts to integer
@@ -24,4 +24,6 @@ def max_min_in_string (str)
 
 end
 
-pp max_min_in_string("1 2 3 4 5 6 7 8")
+pp max_min_in_string("5 2 9 8 23 1")
+pp max_min_in_string("15 4 4 38 -9")
+pp max_min_in_string("-23 4 4 -23 8 0 -2")
