@@ -57,3 +57,7 @@ end
 # dog.eat(15, "afternoon")
 # dog.eat(10, "evening")
 # dog.display_daily_log
+
+#* Create object directly from sub-class
+    #new object inherets all parent variables and methods
+    # Sub_object.new(sub-class arugment1, sub-class arguement2)
