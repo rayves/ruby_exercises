@@ -5,7 +5,7 @@
 class Pet
     attr_reader :type
     attr_accessor :name
-    @@total_pets = 0 #  First create total pets class | total pets initializes at 0
+    @@total_pets = 0 # CLASS ATTRIBUTE/CLASS VARIABLE First create total pets class | total pets initializes at 0
     def initialize(type, name) # special method for defining class
                                 # called when create object instance from class
                                 # sets initial object attributes
@@ -21,12 +21,6 @@ class Pet
     # Gives access to @@total_pets class variable
     def self.total_pets 
             @@total_pets
-    end
-    def to_s 
-        # method available to all obejcts in ruby
-        #method that overwrites existing (default) method in class
-        #alternate implementation of what should be printed when puts is called
-        return "Pet: type-#{@type} name-#{@name}" #prints object instances
     end
     # # Method to access ability to change class instance variables
     # def name= (name)
@@ -48,6 +42,12 @@ class Pet
         @meals.each do |meal| #@meals = array | meal = elements in array
             puts "  #{meal[:amount]} grams in the #{meal[:time]}"
         end
+    end
+    def to_s 
+        # method available to all obejcts in ruby
+        #method that overwrites existing (default) method in class
+        #alternate implementation of what should be printed when puts is called
+        return "Pet: type-#{@type} name-#{@name}" #prints object instances
     end
 end
 # dog = Pet.new("dog", "Spike") #create new instance of Pet class
