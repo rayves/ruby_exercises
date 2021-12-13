@@ -55,10 +55,10 @@ class Pet
 
      end
      def sleep(time_in_hours)
-        naps << time_in_hours
+        @naps << time_in_hours
      end
      def sleep_time
-        naps.length > 0 ? naps.sum : 0
+        @naps.length > 0 ? @naps.sum : 0
      end
  end
  
