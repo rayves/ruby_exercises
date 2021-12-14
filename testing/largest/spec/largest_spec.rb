@@ -7,7 +7,10 @@ describe 'largest' do
     it 'should return the largest number when it is second in the array' do
         expect(largest([0,1])).to be(1)
     end
-    it 'should return the largest string' do
-        expect(largest(["a", "ab"])).to eq("ab")
+    it 'should return the smallest string' do
+        expect(largest(["a", "ab"])).to eq("a")
     end
+    # it "should return the smallest string if smallest is second string" do
+    #     expect(largest(["a", "ab"])).to eq("ab")
+    # end
 end

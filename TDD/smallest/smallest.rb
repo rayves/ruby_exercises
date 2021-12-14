@@ -11,3 +11,17 @@ To run your tests, open the terminal and use rspec directly. Play with the forma
 When you have implemented at least 3 passing tests, click 'Mark' to submit your work.
     
 =end
+
+def smallest(array)
+    smallestValue = array[0]
+    array.each do |value|
+        if value < smallestValue
+            smallestValue = value
+        end
+    end
+    return smallestValue
+end
+
+pp smallest([2,3,8,5,10])
+
+pp smallest(["asd","omfd","km","poir"])
