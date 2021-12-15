@@ -56,10 +56,31 @@ end
 
 # Main program
 
-if ARGV[0]
-	number_of_flips = ARGV[0].to_i
-else
-	number_of_flips = 0	
+# if ARGV[0]
+# 	number_of_flips = ARGV[0].to_i
+# else
+# 	number_of_flips = 0	
+# end
+
+# if number_of_flips == 0
+# 	# prompt for number
+# 	puts "how many flips?"
+# 	number_of_flips = gets.to_i
+# end
+
+# puts flip_coin number_of_flips
+
+
+#* EDIT
+
+number_of_flips = 0	
+
+ARGV.each do |arg|
+	if arg == "-h" || arg == "--help"
+		return usage
+	else
+		number_of_flips = arg.to_i
+	end
 end
 
 if number_of_flips == 0
