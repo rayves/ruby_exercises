@@ -61,4 +61,10 @@ class Pet
         @naps.length > 0 ? @naps.sum : 0
      end
  end
- 
+
+
+
+#* CODE TEST
+rex = Pet.new("Dog", "Rex")
+
+puts rex

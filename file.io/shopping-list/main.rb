@@ -62,13 +62,15 @@ File.foreach("./list.txt") do |line|
     my_shopping_list << line.strip
 end
 
-puts "What do we need from the shops"
-item = gets.chomp
-File.open("./new-list.txt", "a+") {|f| f.puts(item)}
-my_shopping_list.push(item)
+pp my_shopping_list
 
-File.open("./list.txt", "w") do |file|
-    my_shopping_list.each do |item|
-        file.puts("#{item}")
-    end
-end
+# puts "What do we need from the shops"
+# item = gets.chomp
+# File.open("./new-list.txt", "a+") {|f| f.puts(item)}
+# my_shopping_list.push(item)
+
+# File.open("./list.txt", "w") do |file|
+#     my_shopping_list.each do |item|
+#         file.puts("#{item}")
+#     end
+# end
