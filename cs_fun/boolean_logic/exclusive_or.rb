@@ -19,6 +19,75 @@ Hint 2: If you are using a loop to compare the binary string characters, conside
     
 =end
 
+def decimal_to_binary(decimal)
+	# your code here
+	binary = []
+	calc = decimal
+	until calc < 2
+		binary << calc % 2
+		calc = calc / 2
+	end
+	if calc == 1
+		binary << 1
+	else
+		binary << 0
+	end
+	return binary.reverse
+end
+
+# def match_binary_length(bi_one, bi_two)
+# 	if bi_one.length > bi_two.length
+# 		add = bi_one.length - bi_two.length
+# 		until bi_one.length == bi_two.length
+# 			bi_two.unshift(0)
+# 		end
+# 	elsif bi_one.length < bi_two.length
+# 		add = bi_two.length - bi_one.length
+# 		until bi_one.length == bi_two.length
+# 			bi_one.unshift(0)
+# 		end
+# 	end
+# end
+
+def convert_to_decimal(binary)
+	n = 0
+	pre_decimal = []
+	binary.each do |num|
+		new_num = num * (2 ** n)
+		pre_decimal << new_num
+		n += 1
+	end
+	return pre_decimal.sum
+end
+
 def exclusive_or(num1, num2)
 	# your code here
+	bi_one = decimal_to_binary(num1)
+	bi_two = decimal_to_binary(num2)
+	binary = []
+	if bi_one.length > bi_two.length
+		add = bi_one.length - bi_two.length
+		until bi_one.length == bi_two.length
+			bi_two.unshift(0)
+		end
+	elsif bi_one.length < bi_two.length
+		add = bi_two.length - bi_one.length
+		until bi_one.length == bi_two.length
+			bi_one.unshift(0)
+		end
+	end
+	index = 0
+	until index > bi_one.length - 1
+		if bi_one[index] == bi_two[index]
+			binary << 0
+		else
+			binary << 1
+		end
+		index += 1
+	end
+	return convert_to_decimal(binary.reverse)
 end
+
+
+
+pp exclusive_or(7, 3)
