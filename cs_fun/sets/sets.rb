@@ -63,13 +63,13 @@ def symmetric_difference(set1, set2)
 	combined_set.each do |num|
 		count[num] += 1
 	end
-	count.each do |key, value|
-		if value > 1
-			count.delete(key)
-		end
-	end
+	# count.each do |key, value|
+	# 	if value > 1
+	# 		count.delete(key)
+	# 	end
+	# end
 	# alternate syntax
-	# count.delete_if{|k,v| v < 2}
+	count.delete_if{|k,v| v > 1}
 	return count.keys
 end
 

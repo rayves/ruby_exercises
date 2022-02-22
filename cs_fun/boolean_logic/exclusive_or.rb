@@ -51,13 +51,13 @@ end
 
 def convert_to_decimal(binary)
 	n = 0
-	pre_decimal = []
+	decimal = []
 	binary.each do |num|
 		new_num = num * (2 ** n)
-		pre_decimal << new_num
+		decimal << new_num
 		n += 1
 	end
-	return pre_decimal.sum
+	return decimal.sum
 end
 
 def exclusive_or(num1, num2)
