@@ -22,5 +22,17 @@ Avelino, Heriberto. “The Typology of Pame Number Systems and the Limits of Mes
 =end
 
 def octal_convertor(num)
-
+    converted = []
+    convert = num
+    base = 8
+    until convert < base
+        converted << (convert % base)
+        convert = convert / base
+    end
+    converted << convert
+    return converted.reverse.join.to_i
 end 
+
+pp octal_convertor(10)
+pp octal_convertor(0)
+pp octal_convertor(100)
