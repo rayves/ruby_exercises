@@ -34,7 +34,7 @@ def isTransitive?(pairs)
                 end
             end
         end
-    elsif
+    else
         pairs.each do |pair|
             pairs.each do |pair2|
                 if pair[1] == pair2[0]

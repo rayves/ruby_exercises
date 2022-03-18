@@ -19,3 +19,28 @@ def tribonacci(nums, nth_num)
 	#Your code here
     num
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Solution
+# def tribonacci(nums, nth_num)
+# 	#Your code here
+#     return "Please enter a positive integer" if nth_num < 1 #=> guard clause
+
+#     while nums.length < nth_num
+#         next_value = nums[-1] + nums[-2] + nums[-3]
+#         nums.push(next_value)
+#     end
+
+#     return nums[nth_num -1]
+# end
